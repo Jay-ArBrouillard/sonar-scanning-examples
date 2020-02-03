@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<xsd:schema targetNamespace="http://flexagon.com/partial/manifest" xmlns="http://flexagon.com/partial/manifest" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified"
+            elementFormDefault="qualified">
+  <xsd:element name="BuildManifest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="BuildObject" minOccurs="1" maxOccurs="unbounded">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element type="xsd:long" name="PackageObjectId" maxOccurs="1" minOccurs="1"/>
+              <xsd:element type="xsd:string" name="ObjectPath" maxOccurs="1" minOccurs="1"/>
+              <xsd:element type="xsd:string" name="ObjectTypeCode" maxOccurs="1" minOccurs="1"/>
+              <xsd:element type="xsd:string" name="ObjectHash" maxOccurs="1" minOccurs="1"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<xsd:schema targetNamespace="http://flexagon.com/deploy/testing" xmlns="http://flexagon.com/deploy/testing" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified"
+            elementFormDefault="qualified">
+  <xsd:element name="TestResults">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element type="xsd:dateTime" name="StartTime"/>
+        <xsd:element type="xsd:dateTime" name="EndTime"/>
+        <xsd:element name="TestCase" minOccurs="1" maxOccurs="unbounded">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element type="xsd:string" name="Name" maxOccurs="1" minOccurs="1"/>
+              <xsd:element type="xsd:long" name="Duration" maxOccurs="1" minOccurs="0"/>
+              <xsd:element type="xsd:int" name="ExecutionCount" maxOccurs="1" minOccurs="1"/>
+              <xsd:element type="StatusType" name="Status" maxOccurs="1" minOccurs="1"/>
+              <xsd:element type="xsd:string" name="Message" maxOccurs="1" minOccurs="1"/>
+              <xsd:element type="xsd:string" name="Output" maxOccurs="1" minOccurs="0"/>
+              <xsd:element type="xsd:long" name="MinResponseTime" maxOccurs="1" minOccurs="0"/>
+              <xsd:element type="xsd:long" name="MaxResponseTime" maxOccurs="1" minOccurs="0"/>
+              <xsd:element type="xsd:long" name="AvgResponseTime" maxOccurs="1" minOccurs="0"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:simpleType name="StatusType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="PASSED"/>
+      <xsd:enumeration value="FAILED"/>
+      <xsd:enumeration value="SKIPPED"/>
+      <xsd:enumeration value="ERROR"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>
